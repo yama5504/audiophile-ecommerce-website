@@ -5,10 +5,10 @@ import '../styles/style.scss'
 import { loadComponent } from "./component-loader.js"
 import { renderCart, initCartEvents } from "./cart-ui.js"
 async function init() {
-    await loadComponent("#header", "/assets/components/header.html")
-    await loadComponent("#footer", "/assets/components/footer.html")
-    await loadComponent(".category-list", "/assets/components/category-list.html")
-    await loadComponent(".about", "/assets/components/about.html")
+    await loadComponent("#header", "./assets/components/header.html")
+    await loadComponent("#footer", "./assets/components/footer.html")
+    await loadComponent(".category-list", "./assets/components/category-list.html")
+    await loadComponent(".about", "./assets/components/about.html")
 
     initCartEvents()
 
