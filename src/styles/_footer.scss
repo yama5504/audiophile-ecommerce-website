@@ -1,0 +1,137 @@
+footer {
+    background-color: var(--off-black);
+    color: #fff;
+    position: relative;
+    text-align: center;
+    padding: 13.87vw 0 10.13vw;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 26.93vw;
+        height: 1.07vw;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--orange1);
+    }
+
+    .logo {
+        width: 38.13vw;
+        margin-bottom: 12.8vw;
+    }
+
+    .footer-nav {
+        margin-bottom: 12.8vw;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 4.27vw;
+
+            li {
+                font-size: var(--fs-13px);
+                font-weight: 600;
+                line-height: 1.92;
+                letter-spacing: 0.15em;
+            }
+        }
+    }
+
+    .footer-des {
+        line-height: 1.67;
+        color: rgba(255,255,255,0.5);
+        padding: 0 8vw;
+        margin-bottom: 12.8vw;
+    }
+
+    .copyright {
+        line-height: 1.67;
+        color: rgba(255,255,255,0.5);
+        margin-bottom: 12.8vw;
+    }
+
+    .sns-wrap {
+        ul {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 4.27vw;
+            justify-content: center;
+            align-items: center;
+
+            li a {
+                display: inline-block;
+                width: 6.4vw;
+                height: 6.4vw;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            li:nth-child(2) a{
+                height: 5.2vw;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    footer {
+        text-align: left;
+        padding: 7.81vw 5.21vw 5.99vw;
+
+        &::before {
+            width: 13.15vw;
+            height: 0.52vw;
+            left: 5.21vw;
+            transform: translateX(0);
+        }
+
+        .logo {
+            width: 18.62vw;
+            margin-bottom: 4.17vw;
+        }
+
+        .footer-nav {
+            margin-bottom: 4.17vw;
+
+            ul {
+                flex-direction: initial;
+                gap: 4.43vw;
+                width: 55.99vw;
+            }
+        }
+
+        .footer-des {
+            padding: 0 2vw 0 0;
+            margin-bottom: 10.42vw;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+
+            .copyright {
+                margin-bottom: 0;
+            }
+
+            .sns-wrap {
+                ul {
+                    gap: 2.08vw;
+
+                    li a {
+                        width: 3.13vw;
+                        height: 3.13vw;
+                    }
+
+                    li:nth-child(2) a{
+                        height: 2.54vw;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,148 @@
+.category-page {
+    .category-top {
+        background-color: #1c1c1c;
+        padding: 8.53vw 0;
+        margin-bottom: 17.07vw;
+
+        .category-title {
+            text-align: center;
+            color: #fff;
+            font-size: var(--fs-28px);
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: 0.07em;
+        }
+    }
+
+    .product-list {
+        margin-bottom: 45.87vw;
+
+        .product-card{
+            margin-bottom: 32vw;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            img {
+                margin-bottom: 8.53vw;
+                border-radius: 2.13vw;
+            }
+
+            .text-wrap {
+                text-align: center;
+
+                .overline {
+                    color: var(--orange1);
+                    font-size: var(--fs-14px);
+                    letter-spacing: 0.71em;
+                    margin-bottom: 6.4vw;
+                }
+
+                h2 {
+                    letter-spacing: 0.035em;
+                    margin-bottom: 6.4vw;
+                }
+
+                .description {
+                    line-height: 1.67;
+                    color: rgba(00,00,00,0.5);
+                    margin-bottom: 6.4vw;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .category-page {
+        .category-top {
+            padding: 12.63vw 0;
+            margin-bottom: 15.63vw;
+
+            .category-title {
+                font-size: var(--fs-40px);
+            }
+        }
+
+        .product-list {
+            margin-bottom: 22.4vw;
+
+            .product-card{
+                margin-bottom: 15.63vw;
+
+                img {
+                    margin-bottom: 6.77vw;
+                    border-radius: 1.04vw;
+                }
+
+                .text-wrap {
+                    .overline {
+                        margin-bottom: 2.08vw;
+                    }
+
+                    h2 {
+                        margin-bottom: 4.17vw;
+                        padding: 0 10vw;
+                    }
+
+                    .description {
+                        margin-bottom: 3.13vw;
+                        padding: 0 7vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .category-page {
+        .category-top {
+            padding: 98px 0;
+            margin-bottom: 160px;
+        }
+
+        .product-list {
+            margin-bottom: 240px;
+
+            .product-card{
+                margin-bottom: 160px;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+
+                &.reverse {
+                    flex-direction: row-reverse;
+                }
+
+                img {
+                    margin-bottom: 0;
+                    border-radius: 8px;
+                    width: 540px;
+                }
+
+                .text-wrap {
+                    text-align: left;
+                    width: 445px;
+
+                    .overline {
+                        margin-bottom: 16px;
+                    }
+
+                    h2 {
+                        margin-bottom: 32px;
+                        padding: 0;
+                        text-align: left;
+                    }
+
+                    .description {
+                        margin-bottom: 40px;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

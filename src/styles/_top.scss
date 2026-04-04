@@ -1,0 +1,308 @@
+.top {
+    .mv {
+        background-image: url('/assets/images/home/mobile/image-header.jpg');
+        background-repeat: no-repeat;
+        background-position: center -23vw;
+        background-size: cover;
+        padding: 28.8vw 0 29.87vw;
+        margin-bottom: 24.53vw;
+
+        .text-wrap {
+            text-align: center;
+            color: #fff;
+
+            .overline {
+                font-size: var(--fs-14px);
+                line-height: 1.5;
+                color: rgba(255,255,255,0.5);
+                letter-spacing: 0.71em;
+                margin-bottom: 4.27vw;
+            }
+
+            h1 {
+                font-size: var(--fs-36px);
+                line-height: 1.11;
+                letter-spacing: 0.036em;
+                font-weight: 600;
+                margin-bottom: 6.4vw;
+            }
+
+            .sub-copy {
+                line-height: 1.67;
+                color: rgba(255,255,255,0.75);
+                padding: 0 14vw;
+                margin-bottom: 7.47vw;
+            }
+        }
+    }
+
+    .recommend-list {
+        margin-bottom: 32vw;
+
+        .recommend1 {
+            background-color: var(--orange1);
+            border-radius: 2.13vw;
+            position: relative;
+            text-align: center;
+            padding: 14.67vw 6.4vw;
+            overflow: hidden;
+            margin-bottom: 6.4vw;
+
+            .circle {
+                position: absolute;
+                top: -31vw;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 148vw;
+            }
+
+            .item-img {
+                width: 45.87vw;
+                margin-bottom: 8.53vw;
+            }
+
+            .item-name {
+                font-size: var(--fs-36px);
+                color: #fff;
+                font-weight: 600;
+                padding: 0 10vw;
+                line-height: 1.11;
+                margin-bottom: 6.4vw;
+                letter-spacing: 0.036em;
+            }
+
+            .item-des {
+                color: rgba(255,255,255,0.75);
+                line-height: 1.67;
+                margin-bottom: 6.4vw;
+            }
+        }
+
+        .recommend2 {
+            padding: 26.93vw 6.4vw;
+            background-image: url('/assets/images/home/mobile/image-speaker-zx7.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 2.13vw;
+            margin-bottom: 6.4vw;
+
+            .item-name {
+                font-size: var(--fs-28px);
+                font-weight: 600;
+                line-height: 1.5;
+                margin-bottom: 8.53vw;
+                letter-spacing: 0.07em;
+            }
+        }
+
+        .recommend3 {
+            img {
+                border-radius: 2.13vw;
+                margin-bottom: 6.4vw;
+            }
+
+            .right-wrap {
+                background-color: var(--grey1);
+                padding: 10.93vw 6.4vw;
+                border-radius: 2.13vw;
+
+                p {
+                    font-size: var(--fs-28px);
+                    font-weight: 600;
+                    line-height: 1.5;
+                    margin-bottom: 8.53vw;
+                    letter-spacing: 0.07em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .top {
+        .mv {
+            background-image: url('/assets/images/home/tablet/image-header.jpg');
+            background-position: center -10vw;
+            padding: 16.41vw 0 21.74vw;
+            margin-bottom: 19.27vw;
+
+            .text-wrap {
+                .overline {
+                    margin-bottom: 3.13vw;
+                }
+
+                h1 {
+                    font-size: var(--fs-56px);
+                    margin-bottom: 3.13vw;
+                }
+
+                .sub-copy {
+                    padding: 0 27vw;
+                    margin-bottom: 5.21vw;
+                }
+            }
+        }
+
+        .recommend-list {
+            margin-bottom: 12.5vw;
+
+            .recommend1 {
+                border-radius: 1.04vw;
+                padding: 6.77vw 12vw 8.33vw;
+                margin-bottom: 4.17vw;
+
+                .circle {
+                    top: -35vw;
+                    width: 121vw;
+                }
+
+                .item-img {
+                    width: 25.65vw;
+                    margin-bottom: 8.33vw;
+                }
+
+                .item-name {
+                    font-size: var(--fs-56px);
+                    margin-bottom: 3.13vw;
+                }
+
+                .item-des {
+                    margin-bottom: 5.21vw;
+                    padding: 0 10vw;
+                }
+            }
+
+            .recommend2 {
+                padding: 13.15vw 8.07vw;
+                background-image: url('/assets/images/home/tablet/image-speaker-zx7.jpg');
+                border-radius: 1.04vw;
+                margin-bottom: 4.17vw;
+
+                .item-name {
+                    margin-bottom: 4.17vw;
+                }
+            }
+
+            .recommend3 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.43vw;
+
+                img {
+                    border-radius: 1.04vw;
+                    margin-bottom: 0;
+                }
+
+                .right-wrap {
+                    padding: 13.15vw 0 0 5.34vw;
+                    border-radius: 1.04vw;
+
+                    p {
+                        margin-bottom: 4.17vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .top {
+        .mv {
+            background-image: url('/assets/images/home/desktop/image-hero.jpg');
+            background-position: center -6vw;
+            padding: 8.89vw 0 10.97vw 11.46vw;
+            margin-bottom: 200px;
+
+            .text-wrap {
+                text-align: left;
+
+                .overline {
+                    margin-bottom: 1.67vw;
+                    font-size: 0.97vw;
+                }
+
+                h1 {
+                    font-size: 3.89vw;
+                    padding-right: 60vw;
+                    margin-bottom: 1.67vw;
+                }
+
+                .sub-copy {
+                    padding: 0;
+                    padding-right: 64vw;
+                    margin-bottom: 2.78vw;
+                }
+
+                .cv-btn {
+                    padding: 1.04vw 2.08vw;
+                    font-size: 0.9vw;
+                }
+            }
+        }
+
+        .recommend-list {
+            margin-bottom: 200px;
+
+            .recommend1 {
+                border-radius: 8px;
+                padding: 133px 100px 124px 666px;
+                margin-bottom: 48px;
+                text-align: left;
+
+                .circle {
+                    top: -40px;
+                    left: 315px;
+                    width: 980px;
+                }
+
+                .item-img {
+                    position: absolute;
+                    width: 402px;
+                    margin-bottom: 0;
+                    top: 110px;
+                    left: 117px;
+                }
+
+                .item-name {
+                    margin-bottom: 24px;
+                    padding: 0;
+                }
+
+                .item-des {
+                    margin-bottom: 40px;
+                    padding: 0;
+                }
+            }
+
+            .recommend2 {
+                padding: 101px 95px;
+                background-image: url('/assets/images/home/desktop/image-speaker-zx7.jpg');
+                background-position: -20px center;
+                border-radius: 8px;
+                margin-bottom: 48px;
+
+                .item-name {
+                    margin-bottom: 32px;
+                }
+            }
+
+            .recommend3 {
+                gap: 30px;
+
+                img {
+                    border-radius: 8px;
+                }
+
+                .right-wrap {
+                    padding: 101px 0 0 95px;
+                    border-radius: 8px;
+
+                    p {
+                        margin-bottom: 32px;
+                    }
+                }
+            }
+        }
+    }
+}

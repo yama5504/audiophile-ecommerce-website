@@ -1,0 +1,16 @@
+{
+  "name": "audiophile-ecommerce-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "esbuild": "0.19.12",
+    "sass-embedded": "^1.97.3",
+    "vite": "^6.0.0"
+  }
+}
