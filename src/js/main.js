@@ -3,7 +3,7 @@ import '../styles/style.scss'
 
 
 import { loadComponent } from "./component-loader.js"
-import { renderCart, initCartEvents } from "./cart-ui.js"
+import { renderCart, initCartEvents, renderCheckoutSummary } from "./cart-ui.js"
 async function init() {
     await loadComponent("#header", "./assets/components/header.html")
     await loadComponent("#footer", "./assets/components/footer.html")
@@ -11,16 +11,19 @@ async function init() {
     await loadComponent(".about", "./assets/components/about.html")
 
     initCartEvents()
-
     renderCart()
-
     setupCartToggle()
+
+    // チェックアウトページだった場合、サマリーを描画
+    if (document.querySelector(".checkout-page")) {
+        renderCheckoutSummary()
+    }
 }
 
 
 //カートモーダルの表示・非表示を切り替える設定
 function setupCartToggle() {
-    const cartBtn = document.querySelector(".cart-icon-btn")
+    const cartBtn = document.querySelector(".cart-btn")
     const cartModal = document.querySelector(".cart-modal")
     const overlay = document.querySelector(".modal-overlay")
 

@@ -43,6 +43,11 @@ header {
         background-color: #fff;
         border-radius: 2.13vw;
         padding: 8.27vw 7.47vw;
+        z-index: 200;
+
+        &.active {
+            display: block;
+        }
 
         .cart-top {
             display: flex;
@@ -138,6 +143,21 @@ header {
             width: 100%;
             text-align: center;
         }
+    }
+
+    .modal-overlay {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(00,00,00,0.4);
+        top: 89px;
+        left: 0;
+        z-index: 100;
+    }
+
+    .modal-overlay.active {
+        display: block;
     }
 }
 

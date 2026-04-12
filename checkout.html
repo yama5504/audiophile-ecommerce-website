@@ -17,7 +17,7 @@
       </p>
     </header>
 
-    <main>
+    <main class="checkout-page">
 
         <div class="wrap">
             
@@ -26,11 +26,80 @@
             </p>
 
             <form id="checkout-form">
-                <div class="input-wrap">
+                <div class="form-inner">
                     <h1>CHECKOUT</h1>
+                    <div class="form-group">
+                        <h3>BILLING DETAILS</h3>
+                        <div class="input-contents">
+                            <div class="input-wrap">
+                                <label for="">Name</label>
+                                <input type="text" id="name" placeholder="Alexei Ward" required>
+                            </div>
+                            <div class="input-wrap">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="alex@mail.com" required> 
+                            </div>
+                            <div class="input-wrap">
+                                <label for="tel">Phone Number</label>
+                                <input type="tel" id="tel" placeholder="+1 202-555-0136" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>SHIPPING INFO</h3>
+                        <div class="input-contents">
+                            <div class="input-wrap">
+                                <label for="">Your Address</label>
+                                <input type="" id="" placeholder="1137 Williams Avenue">
+                            </div>
+                            <div class="input-wrap">
+                                <label for="">ZIP Code</label>
+                                <input type="" id="" placeholder="10001">
+                            </div>
+                            <div class="input-wrap">
+                                <label for="">City</label>
+                                <input type="" id="" placeholder="New York">
+                            </div>
+                            <div class="input-wrap">
+                                <label for="">Country</label>
+                                <input type="" id="" placeholder="United States">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>PAYMENT DETAILS</h3>
+                        <div class="input-contents">
+                            <div class="input-wrap">
+                                <label for="">Payment Method</label>
+                                <div class="radio-wrap">
+                                    <label for="">
+                                        <input type="radio" name="payment" value="e-money" checked>
+                                        <span>e-Money</span>
+                                    </label>
+                                    <label for="">
+                                        <input type="radio" name="payment" value="cash">
+                                        <span>Cash on Delivery</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="input-wrap">
+                                <label for="tel">e-Money Number</label>
+                                <input type="tel" id="" placeholder="238521993" required>
+                            </div>
+                            <div class="input-wrap">
+                                <label for="tel">e-Money PIN</label>
+                                <input type="tel" id="" placeholder="6891" required>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="summary"></div>
+                <aside class="summary">
+                    <h2>SUMMARY</h2>
+                    <div class="summary-inner"></div>
+                </aside>
             </form>
 
         </div>
