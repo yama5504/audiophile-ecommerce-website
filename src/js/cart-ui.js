@@ -58,15 +58,17 @@ export const initCartEvents = () => {
         const btn = e.target.closest('.qty-btn')
         if (!btn) return
 
-        const id = btn.dataset.id
+        const id = Number(btn.dataset.id)
         const cart = getCart()
         // IDが数値か文字列か不明な場合に対応
-        const item = cart.find(i => String(i.id) === String(id))
+        const item = cart.find(i => Number(i.id) === id)
 
-        if (btn.clasList.contains("plus")) {
+        if(!item) return;
+
+        if (btn.classList.contains("plus")) {
             updateQuantity(id, item.quantity + 1)
         }
-        else if (btn.clasList.contains("minus")) {
+        else if (btn.classList.contains("minus")) {
             if (item.quantity > 1) {
                 updateQuantity(id, item.quantity - 1)
             } else {
@@ -99,3 +101,47 @@ export const initCartEvents = () => {
         window.location.href = "./checkout.html"
     })
 }
+
+
+/**
+ * カートの内容をcheckoutページに反映
+ */
+export const renderCheckoutSummary = () => {
+    const cart = getCart();
+    const summaryContainer = document.querySelector(".summary-inner");
+    if (!summaryContainer) return;
+
+    const total = getTotal();
+    const shipping = 50; // 固定の送料
+    const vat = Math.round(total * 0.2); // 消費税（例：20%）
+    const grandTotal = total + shipping;
+
+    // HTMLを構築
+    const itemsHtml = cart.map(item => `
+        <div class="summary-item">
+            <div class="summary-item-left">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="info">
+                    <p class="name">${item.name.split(' ').slice(0, -1).join(' ')}</p>
+                    <p class="price">$ ${item.price.toLocaleString()}</p>
+                </div>
+            </div>
+            <div class="summary-item-qty">
+                <span>x${item.quantity}</span>
+            </div>
+        </div>
+    `).join('');
+
+    summaryContainer.innerHTML = `
+        <div class="summary-items">
+            ${itemsHtml}
+        </div>
+        <div class="summary-calculations">
+            <div class="row"><span>TOTAL</span><strong>$ ${total.toLocaleString()}</strong></div>
+            <div class="row"><span>SHIPPING</span><strong>$ ${shipping.toLocaleString()}</strong></div>
+            <div class="row"><span>VAT (INCLUDED)</span><strong>$ ${vat.toLocaleString()}</strong></div>
+            <div class="row grand-total-row"><span>GRAND TOTAL</span><strong class="orange-text">$ ${grandTotal.toLocaleString()}</strong></div>
+        </div>
+        <button type="submit" form="checkout-form" class="checkout-submit-btn">CONTINUE & PAY</button>
+    `;
+};
