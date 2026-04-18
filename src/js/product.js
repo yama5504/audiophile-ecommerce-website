@@ -13,7 +13,7 @@ if(!product) {
 } else {
     container.innerHTML = `
     <p class="breadcrumbs">
-        <a href="">Go Back</a>
+        <a href="./category.html?category=${product.category}">Go Back</a>
     </p>
     <div class="product-top">
         <picture>
@@ -85,7 +85,7 @@ if(!product) {
                         <img src="${other.image.mobile}" alt="${other.name}">
                     </picture>
                     <h3>${other.name}</h3>
-                    <a class="cv-btn" href="">SEE PRODUCT</a>
+                    <a class="cv-btn" href="./product.html?product=${other.slug}">SEE PRODUCT</a>
                 </li>
             `).join('')}
         </ul>
