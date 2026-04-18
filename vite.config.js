@@ -1,4 +1,9 @@
 import { defineConfig } from 'vite'
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 export default defineConfig({
   base: '/audiophile-ecommerce-website/',
@@ -12,10 +17,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve('./index.html'),
-        category: resolve('./category.html'),
-        product: resolve('./product.html'),
-        checkout: resolve('./checkout.html'),
+        main: path.resolve(__dirname, 'index.html'),
+        category: path.resolve(__dirname, 'category.html'),
+        product: path.resolve(__dirname, 'product.html'),
+        checkout: path.resolve(__dirname, 'checkout.html'),
       }
     }
   }
