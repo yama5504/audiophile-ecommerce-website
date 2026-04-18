@@ -26,7 +26,7 @@ products.forEach((product, index) => {
             ${product.new ? `<p class="overline">NEW PRODUCT</p>` : ""}
             <h2>${product.name}</h2>
             <p class="description">${product.description}</p>
-            <a class="cv-btn" href="">SEE PRODUCT</a>
+            <a class="cv-btn" href="./product.html?product=${product.slug}">SEE PRODUCT</a>
         </div>
     </div>
     `
