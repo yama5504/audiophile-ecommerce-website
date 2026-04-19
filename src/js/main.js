@@ -13,6 +13,7 @@ async function init() {
     initCartEvents()
     renderCart()
     setupCartToggle()
+    setupMenuToggle()
 
     // チェックアウトページだった場合、サマリーを描画
     if (document.querySelector(".checkout-page")) {
@@ -40,6 +41,38 @@ function setupCartToggle() {
     if (overlay) {
         overlay.addEventListener("click", () => {
             cartModal.classList.remove("active")
+            overlay.classList.remove("active")
+        })
+    }
+}
+
+//SPメニューの表示・非表示を切り替える設定
+function setupMenuToggle() {
+    const menuBtn = document.querySelector(".menu-btn")
+    const menuSp = document.querySelector(".menu-sp")
+    const overlay = document.querySelector(".modal-overlay")
+
+    if (!menuBtn || !menuSp) return
+
+    menuBtn.addEventListener("click", () => {
+        const isActive = menuSp.classList.toggle("active")
+        menuBtn.classList.toggle("open") // ハンバーガーアイコンの変形用
+
+        // オーバーレイの表示状態をメニューに同期
+        if (overlay) {
+            if (isActive) {
+                overlay.classList.add("active")
+            } else {
+                overlay.classList.remove("active")
+            }
+        }
+    })
+
+    // メニュー側からのオーバーレイ制御
+    if (overlay) {
+        overlay.addEventListener("click", () => {
+            menuSp.classList.remove("active")
+            menuBtn.classList.remove("open")
             overlay.classList.remove("active")
         })
     }
