@@ -3,7 +3,6 @@ header {
     height: 89px;
     // border-bottom: 1px solid rgba(255,255,255,0.1);
     background-color: #1c1c1c;
-    padding: 0 6.4vw;
     position: fixed;
     top: 0;
     left: 0;
@@ -14,6 +13,7 @@ header {
         align-items: center;
         justify-content: space-between;
         height: 100%;
+        padding: 0 6.4vw;
 
         .left-wrap {
             display: contents;
@@ -33,6 +33,68 @@ header {
                 }
             }
         }
+
+        .menu-pc {
+            display: none;
+        }
+    }
+
+    .menu-sp {
+        background-color: #fff;
+        width: 100%;
+        padding: 22.4vw 6.4vw 9.33vw;
+        display: none;
+        position: absolute;
+        top: 89px;
+        z-index: 200;
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+
+        &.active {
+            display: block;
+            transform: translateY(0);
+        }
+
+        ul {
+            display: grid;
+            gap: 18.13vw;
+
+            li {
+                background-color: var(--grey1);
+                border-radius: 2.13vw;
+                text-align: center;
+                position: relative;
+                padding: 23.47vw 0 5.87vw;
+
+                img {
+                    width: auto;
+                    height: 34vw;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%,-36%);
+                }
+
+                p {
+                    font-weight: 700;
+                    letter-spacing: 0.07em;
+                    margin-bottom: 4.53vw;
+                }
+
+                a {
+                    font-size: var(--fs-13px);
+                    letter-spacing: 0.08em;
+                    color: rgba(00,00,00,0.5);
+                    font-weight: 700;
+
+                    svg {
+                        margin-left: 3vw;
+                        stroke-width: 2;
+                    }
+                }
+            }
+        }
     }
 
     .cart-modal {
@@ -40,6 +102,8 @@ header {
         width: 87.2vw;
         position: absolute;
         top: 114px;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: #fff;
         border-radius: 2.13vw;
         padding: 8.27vw 7.47vw;
@@ -77,6 +141,7 @@ header {
                 justify-content: space-between;
                 align-items: center;
                 gap: 2.67vw;
+                margin-bottom: 6.4vw;
 
                 .cart-item-left {
                     display: flex;
@@ -90,7 +155,7 @@ header {
 
                     .name {
                         font-weight: 600;
-                        line-height: 1.67;
+                        line-height: 1;
                     }
 
                     .price {
@@ -163,11 +228,186 @@ header {
 
 @media screen and (min-width:768px) {
     header {
+        .header-inner {
+            padding: 0 5.21vw;
+
+            .left-wrap {
+                display: flex;
+                align-items: center;
+
+                .menu-btn {
+                    margin-right: 42px;
+                }
+            }
+        }
+
+        .menu-sp {
+            padding: 14.06vw 10.67vw 8.72vw;
+
+            ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1.3vw;
+
+                li {
+                    border-radius: 1.04vw;
+                    padding: 11.46vw 0 2.86vw;
+
+                    img {
+                        height: 18vw;
+                        transform: translate(-50%,-36%);//
+                    }
+
+                    p {
+                        margin-bottom: 2.21vw;
+                    }
+
+                    a {
+                        svg {
+                            margin-left: 0.5vw;
+                        }
+                    }
+                }
+            }
+        }
+
+        .cart-modal {
+            width: 49.09vw;
+            left: auto;
+            right: 5.21vw;
+            transform: translateX(0);
+            border-radius: 1.04vw;
+            padding: 4.17vw;
+
+            .cart-top {
+                margin-bottom: 4.17vw;
+            }
+
+            .cart-items {
+                margin-bottom: 4.17vw;
+
+                .cart-item {
+                    gap: 2.67vw;
+                    margin-bottom: 3.13vw;
+
+                    .cart-item-left {
+                        img {
+                            border-radius: 1.04vw;
+                            width: 8.33vw;
+                            margin-right: 2.08vw;
+                        }
+                    }
+
+                    .qty {
+                        width: 12.5vw;
+                        height: 4.17vw;
+
+                        .qty-btn {
+                            width: 7.13vw;
+                        }
+                    }
+                }
+            }
+
+            .amount {
+                margin-bottom: 3.13vw;
+
+                .right {
+                    span {
+                        margin-left: 0.5vw;
+                    }
+                }
+            }
+        }
     }
 }
 
 @media screen and (min-width:1440px) {
     header {
         height: 95px;
+
+        .header-inner {
+            width: 77.08vw;
+            padding: 0;
+            margin: 0 auto;
+
+            .left-wrap {
+                .menu-btn {
+                    display: none;
+                }
+            }
+
+            .menu-pc {
+                display: block;
+
+                ul {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    gap: 34px;
+
+                    li a {
+                        color: #fff;
+                        font-size: var(--fs-13px);
+                        letter-spacing: 0.152em;
+                    }
+                }
+            }
+        }
+
+        .menu-sp {
+            display: none;
+        }
+
+        .cart-modal {
+            width: 377px;
+            right: 11.46vw;
+            border-radius: 8px;
+            padding: 32px;
+            top: 130px;
+
+            .cart-top {
+                margin-bottom: 32px;
+            }
+
+            .cart-items {
+                margin-bottom: 32px;
+
+                .cart-item {
+                    gap: 15px;
+                    margin-bottom: 24px;
+
+                    .cart-item-left {
+                        img {
+                            border-radius: 8px;
+                            width: 64px;
+                            margin-right: 16px;
+                        }
+                    }
+
+                    .qty {
+                        width: 96px;
+                        height: 32px;
+
+                        .qty-btn {
+                            width: 70px;
+                        }
+                    }
+                }
+            }
+
+            .amount {
+                margin-bottom: 24px;
+
+                .right {
+                    span {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+
+        .modal-overlay {
+            top: 98px;
+        }
     }
 }
