@@ -49,7 +49,7 @@
                     <div class="form-group">
                         <h3>SHIPPING INFO</h3>
                         <div class="input-contents">
-                            <div class="input-wrap">
+                            <div class="input-wrap is-wide">
                                 <label for="">Your Address</label>
                                 <input type="" id="" placeholder="1137 Williams Avenue">
                             </div>
@@ -71,18 +71,20 @@
                     <div class="form-group">
                         <h3>PAYMENT DETAILS</h3>
                         <div class="input-contents">
-                            <div class="input-wrap">
-                                <label for="">Payment Method</label>
+                            <div class="input-wrap is-wide pay-method">
+                                <p class="input-label">Payment Method</p>
+
                                 <div class="radio-wrap">
-                                    <label for="">
-                                        <input type="radio" name="payment" value="e-money" checked>
-                                        <span>e-Money</span>
-                                    </label>
-                                    <label for="">
-                                        <input type="radio" name="payment" value="cash">
-                                        <span>Cash on Delivery</span>
-                                    </label>
+                                    <div class="radio-item">
+                                        <input type="radio" name="payment" id="pay-emoney" value="e-money" checked>
+                                        <label for="pay-emoney">e-Money</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" name="payment" id="pay-cash" value="cash">
+                                        <label for="pay-cash">Cash on Delivery</label>
+                                    </div>
                                 </div>
+
                             </div>
                             <div class="input-wrap">
                                 <label for="tel">e-Money Number</label>
