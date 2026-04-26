@@ -145,3 +145,65 @@ export const renderCheckoutSummary = () => {
         <button type="submit" form="checkout-form" class="checkout-submit-btn">CONTINUE & PAY</button>
     `;
 };
+
+
+/**
+ * Thanksポップアップの表示制御
+ */
+export const initThanksModal = () => {
+    const form = document.querySelector("#checkout-form")
+    const modal = document.querySelector(".thanks-modal")
+    const overlay = document.querySelector(".thanks-overlay")
+
+    if (!form || !modal) return
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+
+        // 1. ポップアップの内容を更新
+        updateThanksContent()
+
+        // 2. ポップアップ表示
+        modal.classList.add("active")
+        if (overlay) overlay.classList.add("active")
+        document.body.style.overflow = "hidden"
+
+        // 3. カートをクリア
+        clearCart()
+        renderCart() // ヘッダーのバッジなどもリセット
+    })
+}
+
+
+/**
+ * Thanksポップアップ内の表示更新
+ */
+function updateThanksContent() {
+    const cart = getCart()
+    if (cart.length === 0) return
+
+    const firstItem = cart[0]
+    const otherCount = cart.reduce((sum, item) => sum + item.quantity, 0) - firstItem.quantity
+    const grandTotal = getTotal() + 50
+
+    const itemListEl = document.querySelector("#thanks-item-list")
+    const otherCountEl = document.querySelector("#other-count")
+    const thanksTotalEl = document.querySelector("#thanks-total")
+
+    if (itemListEl) {
+        itemListEl.innerHTML = `
+            <div class="summary-item">
+                <div class="summary-item-left">
+                    <img src="${firstItem.image}" alt="${firstItem.name}">
+                    <div class="info">
+                        <p class="name">${firstItem.name.split(' ').slice(0, -1).join(' ')}</p>
+                        <p class="price">$ ${firstItem.price.toLocaleString()}</p>
+                    </div>
+                </div>
+                <div class="summary-item-qty"><span>x${firstItem.quantity}</span></div>
+            </div>
+        `
+    }
+    if (otherCountEl) otherCountEl.textContent = otherCount
+    if (thanksTotalEl) thanksTotalEl.textContent = grandTotal.toLocaleString()
+}
