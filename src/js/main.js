@@ -3,7 +3,7 @@ import '../styles/style.scss'
 
 
 import { loadComponent } from "./component-loader.js"
-import { renderCart, initCartEvents, renderCheckoutSummary } from "./cart-ui.js"
+import { renderCart, initCartEvents, renderCheckoutSummary, initThanksModal } from "./cart-ui.js"
 async function init() {
     await loadComponent("#header", "./assets/components/header.html")
     await loadComponent("#footer", "./assets/components/footer.html")
@@ -18,6 +18,7 @@ async function init() {
     // チェックアウトページだった場合、サマリーを描画
     if (document.querySelector(".checkout-page")) {
         renderCheckoutSummary()
+        initThanksModal()
     }
 }
 
