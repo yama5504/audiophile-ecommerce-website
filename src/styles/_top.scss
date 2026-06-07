@@ -278,6 +278,10 @@
                     margin-bottom: 40px;
                     padding: 0;
                 }
+
+                .cv-btn.black:hover {
+                    background-color: #4c4c4c;
+                }
             }
 
             .recommend2 {
@@ -289,6 +293,11 @@
 
                 .item-name {
                     margin-bottom: 32px;
+                }
+
+                .cv-btn.border:hover {
+                    color: #fff;
+                    background-color: #000;
                 }
             }
 
@@ -306,6 +315,11 @@
                     p {
                         margin-bottom: 32px;
                     }
+                }
+
+                .cv-btn.border:hover {
+                    color: #fff;
+                    background-color: #000;
                 }
             }
         }

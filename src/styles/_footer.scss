@@ -168,6 +168,10 @@ footer {
                 ul {
                     gap: 34px;
                     width: auto;
+
+                    li a:hover {
+                        color: var(--orange1);
+                    }
                 }
             }
         }
@@ -192,6 +196,10 @@ footer {
                     li a {
                         width: 24px;
                         height: 24px;
+
+                        &:hover{
+                            color: var(--orange1);
+                        }
                     }
 
                     li:nth-child(2) a{

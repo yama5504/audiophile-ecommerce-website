@@ -241,6 +241,10 @@ h2 {
 
     .cv-btn {
         padding: 15px 30px;
+
+        &:hover {
+            background-color: var(--orange2);
+        }
     }
 
     .category-list {
@@ -264,6 +268,10 @@ h2 {
                 }
 
                 a {
+                    &:hover {
+                        color: var(--orange1);
+                    }
+
                     svg {
                         margin-left: 4px;
                     }

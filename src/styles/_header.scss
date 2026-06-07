@@ -354,6 +354,10 @@ header {
                         color: #fff;
                         font-size: var(--fs-13px);
                         letter-spacing: 0.152em;
+                        
+                        &:hover {
+                            color: var(--orange1);
+                        }
                     }
                 }
             }
@@ -372,6 +376,10 @@ header {
 
             .cart-top {
                 margin-bottom: 32px;
+
+                .clear-btn:hover {
+                    color: var(--orange1);
+                }
             }
 
             .cart-items {
@@ -395,6 +403,10 @@ header {
 
                         .qty-btn {
                             width: 70px;
+
+                            &:hover {
+                                color: var(--orange1);
+                            }
                         }
                     }
                 }

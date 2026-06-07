@@ -340,6 +340,10 @@
                             
                             button {
                                 width: 50px;
+
+                                &:hover {
+                                    color: var(--orange1);
+                                }
                             }
 
                             span {
